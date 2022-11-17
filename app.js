@@ -220,6 +220,14 @@ app.post("/delete",(req,res)=>{
 //     res.redirect("/work");
 // })
 
-app.listen(3000,function(){
-    console.log("Server 3000 is up and listening");
+// app.listen(3000,function(){
+//     console.log("Server 3000 is up and listening");
+// });
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port,function(){
+    console.log("Server on " + port +" is up and listening");
 });
